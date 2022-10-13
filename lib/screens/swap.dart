@@ -1,5 +1,8 @@
+import 'dart:developer';
+
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
+import 'package:swap_hami/dialogbox/dialog_helper.dart';
 import 'package:swap_hami/theme/appcolors.dart';
 
 class Swap extends StatefulWidget {
@@ -79,6 +82,7 @@ class _SwapState extends State<Swap> {
             decoration: BoxDecoration(
                 color: Appcolor.frmbg, borderRadius: BorderRadius.circular(30)),
             child: Row(
+              crossAxisAlignment: CrossAxisAlignment.end,
               children: [
                 Expanded(
                   child: Column(
@@ -110,58 +114,90 @@ class _SwapState extends State<Swap> {
                       //         )),
                       //   ),
                       // ),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      Expanded(
-                        child: FadeInUp(
-                          // from: 40,
-                          delay: const Duration(milliseconds: 800),
-                          duration: const Duration(milliseconds: 1000),
-                          child: TextField(
-                            // controller: textEditingController,
-                            controller: amount,
+                      //token
+                      // const SizedBox(
+                      //   height: 10,
+                      // ),
+                      Row(
+                        children: [
+                          Expanded(
+                            child: FadeInUp(
+                              // from: 40,
+                              delay: const Duration(milliseconds: 800),
+                              duration: const Duration(milliseconds: 1000),
+                              child: TextField(
+                                // controller: textEditingController,
+                                controller: amount,
 
-                            textAlign: TextAlign.left,
-                            // keyboardType: const TextInputType.numberWithOptions(
-                            //     signed: true, decimal: true),
-                            cursorColor: Appcolor.sw_li_changes,
-                            style: TextStyle(
-                                color: Appcolor.sw_li_changes,
-                                fontSize: 16,
-                                fontWeight: FontWeight.w600),
-                            onSubmitted: (value) {
-                              setState(() {
-                                amount.text = "₹$value.00";
-                                // textEditingController.text = "\₹" + value + ".00";
-                              });
-                            },
-                            onTap: () {
-                              setState(() {
-                                if (amount.text == "0.00") {
-                                  amount.text = "";
-                                } else {
-                                  amount.text = amount.text
-                                      .replaceAll(RegExp(r'.00'), '');
-                                }
-                              });
-                            },
+                                textAlign: TextAlign.left,
+                                // keyboardType: const TextInputType.numberWithOptions(
+                                //     signed: true, decimal: true),
+                                cursorColor: Appcolor.sw_li_changes,
+                                style: TextStyle(
+                                    color: Appcolor.sw_li_changes,
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w600),
+                                onSubmitted: (value) {
+                                  setState(() {
+                                    amount.text = "₹$value.00";
+                                    // textEditingController.text = "\₹" + value + ".00";
+                                  });
+                                },
+                                onTap: () {
+                                  setState(() {
+                                    if (amount.text == "0.00") {
+                                      amount.text = "";
+                                    } else {
+                                      amount.text = amount.text
+                                          .replaceAll(RegExp(r'.00'), '');
+                                    }
+                                  });
+                                },
 
-                            decoration: InputDecoration(
-                                // errorText: _validate ? 'Value Can\'t Be Empty' : null,
-                                hintText: "Enter Amount",
-                                hintStyle: const TextStyle(
-                                    color: Colors.grey, fontSize: 20),
-                                border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(10),
-                                  borderSide: BorderSide.none,
-                                ),
-                                focusedBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(10),
-                                  borderSide: BorderSide.none,
-                                )),
+                                decoration: InputDecoration(
+                                    // errorText: _validate ? 'Value Can\'t Be Empty' : null,
+                                    hintText: "Enter Amount",
+                                    isDense: true,
+                                    contentPadding: EdgeInsets.zero,
+                                    hintStyle: const TextStyle(
+                                        color: Colors.grey, fontSize: 20),
+                                    border: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(10),
+                                      borderSide: BorderSide.none,
+                                    ),
+                                    focusedBorder: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(10),
+                                      borderSide: BorderSide.none,
+                                    )),
+                              ),
+                            ),
                           ),
-                        ),
+                          GestureDetector(
+                            onTap: () {
+                              log('select token');
+                              DialogHelperToken.exit(context);
+                              // DialogHelper1.exit(context);
+                            },
+                            child: Container(
+                              child: Row(
+                                children: const [
+                                  Icon(Icons.abc),
+                                  Text(
+                                    'data',
+                                    style: TextStyle(
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w600,
+                                        color: Colors.white),
+                                  ),
+                                  Icon(
+                                    Icons.arrow_drop_down,
+                                    color: Colors.white,
+                                  )
+                                ],
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
                     ],
                   ),
@@ -185,31 +221,169 @@ class _SwapState extends State<Swap> {
           //to
           Container(
             width: double.infinity,
+            // height: 110,
             height: MediaQuery.of(context).size.height * 0.1,
+            padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
             decoration: BoxDecoration(
                 color: Appcolor.frmbg, borderRadius: BorderRadius.circular(30)),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                Expanded(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'To',
+                        style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w600,
+                            color: Appcolor.frmtxt),
+                      ),
+                      // SizedBox(
+                      //   width: 60,
+                      //   height: 40,
+                      //   child: TextField(
+                      //     decoration: InputDecoration(
+                      //         hintText: '0.00',
+                      //         hintStyle: const TextStyle(
+                      //             color: Colors.grey, fontSize: 20),
+                      //         border: OutlineInputBorder(
+                      //           borderRadius: BorderRadius.circular(10),
+                      //           borderSide: BorderSide.none,
+                      //         ),
+                      //         focusedBorder: OutlineInputBorder(
+                      //           borderRadius: BorderRadius.circular(10),
+                      //           borderSide: BorderSide.none,
+                      //         )),
+                      //   ),
+                      // ),
+                      //token
+                      // const SizedBox(
+                      //   height: 10,
+                      // ),
+                      Row(
+                        children: [
+                          Expanded(
+                            child: FadeInUp(
+                              // from: 40,
+                              delay: const Duration(milliseconds: 800),
+                              duration: const Duration(milliseconds: 1000),
+                              child: TextField(
+                                // controller: textEditingController,
+                                controller: amount,
+
+                                textAlign: TextAlign.left,
+                                // keyboardType: const TextInputType.numberWithOptions(
+                                //     signed: true, decimal: true),
+                                cursorColor: Appcolor.sw_li_changes,
+                                style: TextStyle(
+                                    color: Appcolor.sw_li_changes,
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w600),
+                                onSubmitted: (value) {
+                                  setState(() {
+                                    amount.text = "₹$value.00";
+                                    // textEditingController.text = "\₹" + value + ".00";
+                                  });
+                                },
+                                onTap: () {
+                                  setState(() {
+                                    if (amount.text == "0.00") {
+                                      amount.text = "";
+                                    } else {
+                                      amount.text = amount.text
+                                          .replaceAll(RegExp(r'.00'), '');
+                                    }
+                                  });
+                                },
+
+                                decoration: InputDecoration(
+                                    // errorText: _validate ? 'Value Can\'t Be Empty' : null,
+                                    hintText: "Enter Amount",
+                                    isDense: true,
+                                    contentPadding: EdgeInsets.zero,
+                                    hintStyle: const TextStyle(
+                                        color: Colors.grey, fontSize: 20),
+                                    border: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(10),
+                                      borderSide: BorderSide.none,
+                                    ),
+                                    focusedBorder: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(10),
+                                      borderSide: BorderSide.none,
+                                    )),
+                              ),
+                            ),
+                          ),
+                          GestureDetector(
+                            onTap: () {
+                              log('select token');
+                              DialogHelperToken.exit(context);
+                              // DialogHelper1.exit(context);
+                            },
+                            child: Container(
+                              child: Row(
+                                children: const [
+                                  Text(
+                                    'Select a currency',
+                                    style: TextStyle(
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w600,
+                                        color: Colors.white),
+                                  ),
+                                  Icon(
+                                    Icons.arrow_drop_down,
+                                    color: Colors.white,
+                                  )
+                                ],
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
           ),
+          // Container(
+          //   width: double.infinity,
+          //   height: MediaQuery.of(context).size.height * 0.1,
+          //   decoration: BoxDecoration(
+          //       color: Appcolor.frmbg, borderRadius: BorderRadius.circular(30)),
+          // ),
 
           const SizedBox(
             height: 20,
           ),
 
           //cnt
-          Container(
-            width: double.infinity,
-            // height: 50,
-            height: MediaQuery.of(context).size.height * 0.06,
-            decoration: BoxDecoration(
-                color: Appcolor.cntbg, borderRadius: BorderRadius.circular(20)),
-            child: const Center(
-                child: Text(
-              'Connect',
-              style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 16,
-                  fontWeight: FontWeight.w600,
-                  height: 1),
-            )),
+          GestureDetector(
+            onTap: () {
+              log('Connect Clicked');
+              DialogConnectToken.exit(context);
+              // DialogHelper1.exit(context);
+            },
+            child: Container(
+              width: double.infinity,
+              // height: 50,
+              height: MediaQuery.of(context).size.height * 0.06,
+              decoration: BoxDecoration(
+                  color: Appcolor.cntbg,
+                  borderRadius: BorderRadius.circular(20)),
+              child: const Center(
+                  child: Text(
+                'Connect',
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 16,
+                    fontWeight: FontWeight.w600,
+                    height: 1),
+              )),
+            ),
           ),
         ],
       ),

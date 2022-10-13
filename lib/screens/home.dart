@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:swap_hami/screens/liquidity.dart';
@@ -5,6 +7,7 @@ import 'package:swap_hami/screens/swap.dart';
 import 'package:swap_hami/theme/appcolors.dart';
 
 import '../components/drawer/customdrawer.dart';
+import '../dialogbox/dialog_helper.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -41,13 +44,14 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
           child: AppBar(
-            backgroundColor: Colors.grey.shade200,
+            backgroundColor: Appcolor.cardbg,
+            // backgroundColor: Colors.grey.shade200,
             // backgroundColor: currentTheme.isDark ? Colors.black : Colors.white,
 
             title: const Text(
               "HAMI SWAP",
               style: TextStyle(
-                  color: Colors.black,
+                  color: Colors.white,
                   // color: currentTheme.isDark ? Colors.white : Colors.black,
                   fontWeight: FontWeight.w600),
             ),
@@ -58,11 +62,39 @@ class _HomeScreenState extends State<HomeScreen> {
               },
               icon: const Icon(
                 Iconsax.menu,
-                color: Colors.black,
+                color: Colors.white,
                 // color: currentTheme.isDark ? Colors.white : Colors.black,
               ),
             ),
             elevation: 0,
+            actions: [
+              Padding(
+                padding: const EdgeInsets.all(5.0),
+                child: GestureDetector(
+                  onTap: () {
+                    log('Connect Clicked');
+                    DialogConnectToken.exit(context);
+                  },
+                  child: Container(
+                    height: 20,
+                    width: 80,
+                    decoration: BoxDecoration(
+                        color: Appcolor.cntbg,
+                        borderRadius: BorderRadius.circular(30)),
+                    child: const Center(
+                      child: Text(
+                        'Connect',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 16,
+                            fontWeight: FontWeight.w600,
+                            height: 1),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ],
           ),
         ),
       ),

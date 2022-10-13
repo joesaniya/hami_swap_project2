@@ -7,4 +7,5 @@ class Appcolor {
   static Color frmbg = const Color.fromARGB(255, 61, 63, 118);
   static Color cntbg = const Color.fromARGB(255, 253, 0, 255);
   static Color frmtxt = const Color.fromARGB(255, 238, 238, 238);
+  static Color search_txtfield_b = const Color.fromARGB(255, 61, 63, 118);
 }
