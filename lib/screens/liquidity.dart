@@ -1,5 +1,8 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 
+import '../dialogbox/dialog_helper.dart';
 import '../theme/appcolors.dart';
 
 class Liquidity extends StatelessWidget {
@@ -44,17 +47,29 @@ class Liquidity extends StatelessWidget {
               ),
               Row(
                 children: [
-                  Icon(
-                    Icons.settings,
-                    color: Appcolor.sw_li_changes,
+                  IconButton(
+                    onPressed: () {
+                      log('Settings Clicked');
+                      Settings.exit(context);
+                    },
+                    icon: Icon(
+                      Icons.settings,
+                      color: Appcolor.sw_li_changes,
+                    ),
                   ),
-                  const SizedBox(
-                    width: 30,
+                  // const SizedBox(
+                  //   width: 30,
+                  // ),
+                  GestureDetector(
+                    onTap: () {
+                      log('history Clicked');
+                      Transaction.exit(context);
+                    },
+                    child: Icon(
+                      Icons.history,
+                      color: Appcolor.sw_li_changes,
+                    ),
                   ),
-                  Icon(
-                    Icons.history,
-                    color: Appcolor.sw_li_changes,
-                  )
                 ],
               )
             ],

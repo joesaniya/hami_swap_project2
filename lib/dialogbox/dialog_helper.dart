@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
+import '../screens/transaction_page.dart';
 import 'Settings_Alert.dart';
 import 'Show_token.dart';
 import 'connect_token.dart';
@@ -38,6 +39,14 @@ class Expert {
       builder: (context) => BackdropFilter(
           filter: ImageFilter.blur(sigmaX: 4.0, sigmaY: 4.0),
           child: const ExpertPage()));
+}
+
+class Transaction {
+  static exit(context) => showDialog(
+      context: context,
+      builder: (context) => BackdropFilter(
+          filter: ImageFilter.blur(sigmaX: 4.0, sigmaY: 4.0),
+          child: const TransactionsPage()));
 }
 
 class ManageTokensPage {

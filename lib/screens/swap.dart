@@ -67,9 +67,15 @@ class _SwapState extends State<Swap> {
                   const SizedBox(
                     width: 30,
                   ),
-                  Icon(
-                    Icons.history,
-                    color: Appcolor.sw_li_changes,
+                  GestureDetector(
+                    onTap: () {
+                      log('history Clicked');
+                      Transaction.exit(context);
+                    },
+                    child: Icon(
+                      Icons.history,
+                      color: Appcolor.sw_li_changes,
+                    ),
                   )
                 ],
               )
@@ -162,7 +168,7 @@ class _SwapState extends State<Swap> {
 
                                 decoration: InputDecoration(
                                     // errorText: _validate ? 'Value Can\'t Be Empty' : null,
-                                    hintText: "Enter Amount",
+                                    hintText: "0.0",
                                     isDense: true,
                                     contentPadding: EdgeInsets.zero,
                                     hintStyle: const TextStyle(
@@ -307,7 +313,7 @@ class _SwapState extends State<Swap> {
 
                                 decoration: InputDecoration(
                                     // errorText: _validate ? 'Value Can\'t Be Empty' : null,
-                                    hintText: "Enter Amount",
+                                    hintText: "0.0",
                                     isDense: true,
                                     contentPadding: EdgeInsets.zero,
                                     hintStyle: const TextStyle(
