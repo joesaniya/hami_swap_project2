@@ -6,6 +6,7 @@ import 'Settings_Alert.dart';
 import 'Show_token.dart';
 import 'connect_token.dart';
 import 'expert_page.dart';
+import 'manage_token.dart';
 
 class DialogHelperToken {
   static exit(context) => showDialog(
@@ -37,4 +38,12 @@ class Expert {
       builder: (context) => BackdropFilter(
           filter: ImageFilter.blur(sigmaX: 4.0, sigmaY: 4.0),
           child: const ExpertPage()));
+}
+
+class ManageTokensPage {
+  static exit(context) => showDialog(
+      context: context,
+      builder: (context) => BackdropFilter(
+          filter: ImageFilter.blur(sigmaX: 4.0, sigmaY: 4.0),
+          child: const ManageTokens()));
 }

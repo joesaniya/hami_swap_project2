@@ -6,6 +6,7 @@ import 'package:swap_hami/theme/appcolors.dart';
 import '../helper/company_helper.dart';
 import '../model/company.dart';
 import '../widgets/search_widgets.dart';
+import 'dialog_helper.dart';
 
 class ShowToken extends StatefulWidget {
   const ShowToken({Key? key}) : super(key: key);
@@ -186,6 +187,7 @@ class _ShowTokenState extends State<ShowToken> {
               GestureDetector(
                 onTap: () {
                   log('Manage Tokens');
+                  ManageTokensPage.exit(context);
                 },
                 child: Text(
                   'Manage Tokens',

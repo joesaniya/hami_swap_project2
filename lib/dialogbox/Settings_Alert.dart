@@ -17,6 +17,8 @@ class _SettingsPageState extends State<SettingsPage> {
   bool isSwitched = false;
   bool isSwitched2 = false;
   bool isSwitched3 = false;
+  String _tabbed = '1';
+  String _swap = '1';
   @override
   Widget build(BuildContext context) {
     return Dialog(
@@ -28,7 +30,7 @@ class _SettingsPageState extends State<SettingsPage> {
   }
 
   _buildChild(BuildContext context) => Container(
-        // height: 570,
+        //  height: 570,
         // padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
         decoration: BoxDecoration(
             color: Appcolor.cardbg,
@@ -59,9 +61,14 @@ class _SettingsPageState extends State<SettingsPage> {
                         fontWeight: FontWeight.w600,
                         color: Colors.white),
                   ),
-                  Icon(
-                    Icons.cancel,
-                    color: Appcolor.cntbg,
+                  IconButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    icon: Icon(
+                      Icons.cancel,
+                      color: Appcolor.cntbg,
+                    ),
                   )
                 ],
               ),
@@ -116,55 +123,91 @@ class _SettingsPageState extends State<SettingsPage> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Container(
-                            height: 30,
-                            width: 140,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(30),
-                                color: Appcolor.global_bg),
-                            child: Center(
-                                child: Text(
-                              'Standard (5)',
-                              style: TextStyle(
-                                  color: Appcolor.cntbg,
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w600),
-                            )),
+                          GestureDetector(
+                            onTap: () {
+                              log('standard');
+                              _tabbed = '1';
+                            },
+                            child: Container(
+                              height: 30,
+                              width: 140,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(30),
+                                  // color: Appcolor.global_bg
+                                  color: _tabbed == '1'
+                                      ? Appcolor.cntbg
+                                      : Appcolor.global_bg),
+                              child: Center(
+                                  child: Text(
+                                'Standard (5)',
+                                style: TextStyle(
+                                    color: _tabbed == '1'
+                                        ? Colors.white
+                                        : Appcolor.cntbg,
+                                    // color: Appcolor.cntbg,
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w600),
+                              )),
+                            ),
                           ),
-                          Container(
-                            height: 30,
-                            width: 140,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(30),
-                                color: Appcolor.global_bg),
-                            child: Center(
-                                child: Text(
-                              'Fast (6)',
-                              style: TextStyle(
-                                  color: Appcolor.cntbg,
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w600),
-                            )),
+                          GestureDetector(
+                            onTap: () {
+                              log('fast');
+                              _tabbed = '2';
+                            },
+                            child: Container(
+                                height: 30,
+                                width: 140,
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(30),
+                                    // color: Appcolor.global_bg
+                                    color: _tabbed == '2'
+                                        ? Appcolor.cntbg
+                                        : Appcolor.global_bg),
+                                // ),
+                                child: Center(
+                                    child: Text(
+                                  'Fast (6)',
+                                  style: TextStyle(
+                                      color: _tabbed == '2'
+                                          ? Colors.white
+                                          : Appcolor.cntbg,
+                                      // color: Appcolor.cntbg,
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w600),
+                                ))),
                           ),
                         ],
                       ),
                       const SizedBox(
                         height: 10,
                       ),
-                      Container(
-                        height: 30,
-                        width: 150,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(30),
-                            color: Appcolor.global_bg),
-                        child: Center(
-                            child: Text(
-                          'Instant (7)',
-                          style: TextStyle(
-                              color: Appcolor.cntbg,
-                              fontSize: 16,
-                              fontWeight: FontWeight.w600),
-                        )),
+                      GestureDetector(
+                        onTap: () {
+                          log('instant');
+                          _tabbed = '3';
+                        },
+                        child: Container(
+                          height: 30,
+                          width: 150,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(30),
+                              // color: Appcolor.global_bg
+                              color: _tabbed == '3'
+                                  ? Appcolor.cntbg
+                                  : Appcolor.global_bg),
+                          child: Center(
+                              child: Text(
+                            'Instant (7)',
+                            style: TextStyle(
+                                color: _tabbed == '3'
+                                    ? Colors.white
+                                    : Appcolor.cntbg,
+                                // color: Appcolor.cntbg,
+                                fontSize: 16,
+                                fontWeight: FontWeight.w600),
+                          )),
+                        ),
                       ),
 
                       const SizedBox(
@@ -210,22 +253,64 @@ class _SettingsPageState extends State<SettingsPage> {
                       Row(
                         // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          Container(
-                            height: 30,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(30),
-                                color: Appcolor.global_bg),
-                            padding: const EdgeInsets.symmetric(
-                              horizontal: 10,
+                          GestureDetector(
+                            onTap: () {
+                              log('0.1');
+                              _swap = '1';
+                            },
+                            child: Container(
+                              height: 30,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(30),
+                                  color: _swap == '1'
+                                      ? Appcolor.cntbg
+                                      : Appcolor.global_bg),
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 10,
+                              ),
+                              child: Center(
+                                  child: Text(
+                                '0.1 %',
+                                style: TextStyle(
+                                    // color: Appcolor.cntbg,
+                                    color: _swap == '1'
+                                        ? Colors.white
+                                        : Appcolor.cntbg,
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w600),
+                              )),
                             ),
-                            child: Center(
-                                child: Text(
-                              '0.1 %',
-                              style: TextStyle(
-                                  color: Appcolor.cntbg,
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w600),
-                            )),
+                          ),
+                          const SizedBox(
+                            width: 10,
+                          ),
+                          GestureDetector(
+                            onTap: () {
+                              log('0.5');
+                              _swap = '2';
+                            },
+                            child: Container(
+                              height: 30,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(30),
+                                  color: _swap == '2'
+                                      ? Appcolor.cntbg
+                                      : Appcolor.global_bg),
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 10,
+                              ),
+                              child: Center(
+                                  child: Text(
+                                '0.5 %',
+                                style: TextStyle(
+                                    // color: Appcolor.cntbg,
+                                    color: _swap == '2'
+                                        ? Colors.white
+                                        : Appcolor.cntbg,
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w600),
+                              )),
+                            ),
                           ),
                           const SizedBox(
                             width: 10,
@@ -234,27 +319,11 @@ class _SettingsPageState extends State<SettingsPage> {
                             height: 30,
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(30),
-                                color: Appcolor.global_bg),
-                            padding: const EdgeInsets.symmetric(
-                              horizontal: 10,
-                            ),
-                            child: Center(
-                                child: Text(
-                              '0.5 %',
-                              style: TextStyle(
-                                  color: Appcolor.cntbg,
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w600),
-                            )),
-                          ),
-                          const SizedBox(
-                            width: 10,
-                          ),
-                          Container(
-                            height: 30,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(30),
-                                color: Appcolor.global_bg),
+                                color: _swap == '3'
+                                    ? Appcolor.cntbg
+                                    : Appcolor.global_bg
+                                // color: Appcolor.global_bg
+                                ),
                             padding: const EdgeInsets.symmetric(
                               horizontal: 10,
                             ),
@@ -262,7 +331,10 @@ class _SettingsPageState extends State<SettingsPage> {
                                 child: Text(
                               '1.0 %',
                               style: TextStyle(
-                                  color: Appcolor.cntbg,
+                                  // color: Appcolor.cntbg,
+                                  color: _swap == '3'
+                                      ? Colors.white
+                                      : Appcolor.cntbg,
                                   fontSize: 16,
                                   fontWeight: FontWeight.w600),
                             )),
