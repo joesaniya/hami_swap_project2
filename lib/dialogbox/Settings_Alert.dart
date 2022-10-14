@@ -127,6 +127,7 @@ class _SettingsPageState extends State<SettingsPage> {
                             onTap: () {
                               log('standard');
                               _tabbed = '1';
+                              setState(() {});
                             },
                             child: Container(
                               height: 30,
@@ -154,6 +155,7 @@ class _SettingsPageState extends State<SettingsPage> {
                             onTap: () {
                               log('fast');
                               _tabbed = '2';
+                              setState(() {});
                             },
                             child: Container(
                                 height: 30,
@@ -186,6 +188,7 @@ class _SettingsPageState extends State<SettingsPage> {
                         onTap: () {
                           log('instant');
                           _tabbed = '3';
+                          setState(() {});
                         },
                         child: Container(
                           height: 30,
@@ -257,6 +260,7 @@ class _SettingsPageState extends State<SettingsPage> {
                             onTap: () {
                               log('0.1');
                               _swap = '1';
+                              setState(() {});
                             },
                             child: Container(
                               height: 30,
@@ -288,6 +292,7 @@ class _SettingsPageState extends State<SettingsPage> {
                             onTap: () {
                               log('0.5');
                               _swap = '2';
+                              setState(() {});
                             },
                             child: Container(
                               height: 30,
@@ -315,29 +320,36 @@ class _SettingsPageState extends State<SettingsPage> {
                           const SizedBox(
                             width: 10,
                           ),
-                          Container(
-                            height: 30,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(30),
-                                color: _swap == '3'
-                                    ? Appcolor.cntbg
-                                    : Appcolor.global_bg
-                                // color: Appcolor.global_bg
-                                ),
-                            padding: const EdgeInsets.symmetric(
-                              horizontal: 10,
-                            ),
-                            child: Center(
-                                child: Text(
-                              '1.0 %',
-                              style: TextStyle(
-                                  // color: Appcolor.cntbg,
+                          GestureDetector(
+                            onTap: () {
+                              log('1.00');
+                              _swap = '3';
+                              setState(() {});
+                            },
+                            child: Container(
+                              height: 30,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(30),
                                   color: _swap == '3'
-                                      ? Colors.white
-                                      : Appcolor.cntbg,
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w600),
-                            )),
+                                      ? Appcolor.cntbg
+                                      : Appcolor.global_bg
+                                  // color: Appcolor.global_bg
+                                  ),
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 10,
+                              ),
+                              child: Center(
+                                  child: Text(
+                                '1.0 %',
+                                style: TextStyle(
+                                    // color: Appcolor.cntbg,
+                                    color: _swap == '3'
+                                        ? Colors.white
+                                        : Appcolor.cntbg,
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w600),
+                              )),
+                            ),
                           ),
                           const SizedBox(width: 10),
 
