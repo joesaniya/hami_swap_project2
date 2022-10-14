@@ -36,6 +36,8 @@ dependencies:
   iconsax: ^0.0.8
   animate_do: ^2.1.0
   font_awesome_flutter: ^10.2.1
+  custom_switch: ^0.0.1
+  flutter_switch: ^0.3.2
 
 dev_dependencies:
   flutter_test:

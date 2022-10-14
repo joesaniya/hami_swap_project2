@@ -54,9 +54,15 @@ class _SwapState extends State<Swap> {
               ),
               Row(
                 children: [
-                  Icon(
-                    Icons.settings,
-                    color: Appcolor.sw_li_changes,
+                  IconButton(
+                    onPressed: () {
+                      log('Settings Clicked');
+                      Settings.exit(context);
+                    },
+                    icon: Icon(
+                      Icons.settings,
+                      color: Appcolor.sw_li_changes,
+                    ),
                   ),
                   const SizedBox(
                     width: 30,

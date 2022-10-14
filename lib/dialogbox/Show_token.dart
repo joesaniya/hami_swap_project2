@@ -121,7 +121,7 @@ class _ShowTokenState extends State<ShowToken> {
                     decoration: InputDecoration(
                       fillColor: Appcolor.search_txtfield_b,
                       filled: true,
-                      hintText: 'Search Your Partner Companies',
+                      hintText: 'Search Your Wallet',
                       hintStyle: TextStyle(
                         color: Appcolor.sw_li_changes,
                       ),
