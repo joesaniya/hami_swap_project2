@@ -185,27 +185,32 @@ class _ShowCurrencyState extends State<ShowCurrency> {
                       );
                     },
                     itemBuilder: (context, index) {
-                      return Container(
-                        height: 40,
-                        // width: double.infinity,
-                        color: Colors.transparent,
-                        child: Row(
-                          children: [
-                            CircleAvatar(
-                              backgroundImage:
-                                  AssetImage(foundCompany![index].image),
-                            ),
-                            const SizedBox(
-                              width: 10,
-                            ),
-                            Text(
-                              foundCompany![index].title,
-                              style: const TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w600),
-                            ),
-                          ],
+                      return GestureDetector(
+                        onTap: () {
+                          log('token');
+                        },
+                        child: Container(
+                          height: 40,
+                          // width: double.infinity,
+                          color: Colors.transparent,
+                          child: Row(
+                            children: [
+                              CircleAvatar(
+                                backgroundImage:
+                                    AssetImage(foundCompany![index].image),
+                              ),
+                              const SizedBox(
+                                width: 10,
+                              ),
+                              Text(
+                                foundCompany![index].title,
+                                style: const TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w600),
+                              ),
+                            ],
+                          ),
                         ),
                       );
                     }),
