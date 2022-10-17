@@ -99,6 +99,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ),
       drawer: const CustomDrawer(),
+      // drawer: const DrawerWidget(),
       // body: const Center(
       //   child: Text(
       //     'Collasable drawer',

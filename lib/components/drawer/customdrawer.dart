@@ -18,6 +18,7 @@ class CustomDrawer extends StatefulWidget {
 
 class _CustomDrawerState extends State<CustomDrawer> {
   bool _isCollapsed = false;
+  final bool _isVisible = false;
 
   @override
   Widget build(BuildContext context) {
@@ -143,6 +144,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
                 isCollapsed: isCollapsed,
                 text: item.title,
                 icon: item.icon,
+                Sub: item.sub,
                 onClicked: () => selectItem(context, index));
           });
 
@@ -159,6 +161,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
   Widget buildMenuItem(
       {required bool isCollapsed,
       required String text,
+      required String Sub,
       required IconData icon,
       VoidCallback? onClicked}) {
     const color = Colors.white;
@@ -210,6 +213,23 @@ class _CustomDrawerState extends State<CustomDrawer> {
                   ),
                 ),
               if (isCollapsed) const Spacer(),
+              isCollapsed
+                  ? Sub == '0'
+                      ? const Spacer()
+                      : Expanded(
+                          child: IconButton(
+                            onPressed: () {
+                              log('clicked');
+                              _isCollapsed = !_isVisible;
+                              setState(() {});
+                            },
+                            icon: const Icon(
+                              Icons.arrow_drop_down,
+                              color: Colors.transparent,
+                            ),
+                          ),
+                        )
+                  : const Spacer()
             ],
           ),
         ),
