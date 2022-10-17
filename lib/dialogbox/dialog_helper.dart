@@ -8,6 +8,7 @@ import 'Show_token.dart';
 import 'connect_token.dart';
 import 'expert_page.dart';
 import 'manage_token.dart';
+import 'show_currency.dart';
 
 class DialogHelperToken {
   static exit(context) => showDialog(
@@ -55,4 +56,12 @@ class ManageTokensPage {
       builder: (context) => BackdropFilter(
           filter: ImageFilter.blur(sigmaX: 4.0, sigmaY: 4.0),
           child: const ManageTokens()));
+}
+
+class DialogHelperCurrency {
+  static exit(context) => showDialog(
+      context: context,
+      builder: (context) => BackdropFilter(
+          filter: ImageFilter.blur(sigmaX: 4.0, sigmaY: 4.0),
+          child: const ShowCurrency()));
 }

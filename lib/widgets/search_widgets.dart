@@ -74,3 +74,56 @@ class CompanyTile extends StatelessWidget {
     );
   }
 }
+
+class CompanyTile1 extends StatelessWidget {
+  final Company data;
+  const CompanyTile1({required this.data});
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () {},
+      child: Container(
+        height: 40,
+        width: double.infinity,
+        color: Colors.transparent,
+        child: Row(
+          children: [
+//               CachedNetworkImage(
+//   // imageUrl: "http://via.placeholder.com/200x150",
+//   imageUrl: data.image,
+//   imageBuilder: (context, imageProvider) => Container(
+//     decoration: BoxDecoration(
+//       image: DecorationImage(
+//           image: imageProvider,
+//           fit: BoxFit.cover,
+//           // colorFilter:
+//           //     ColorFilter.mode(Colors.red, BlendMode.colorBurn)
+//               ),
+//     ),
+//   ),
+//   placeholder: (context, url) => CircularProgressIndicator
+//   (
+//     // color: Appcolor.darkviolte6,
+//   ),
+//   errorWidget: (context, url, error) => Icon(Icons.error),
+// ),
+            CircleAvatar(
+              backgroundImage: AssetImage(data.image),
+            ),
+            const SizedBox(
+              width: 10,
+            ),
+            Text(
+              data.title,
+              style: const TextStyle(
+                  color: Colors.white,
+                  fontSize: 16,
+                  fontWeight: FontWeight.w600),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}

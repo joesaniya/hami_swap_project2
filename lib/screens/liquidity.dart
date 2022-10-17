@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 import '../dialogbox/dialog_helper.dart';
 import '../theme/appcolors.dart';
+import 'liquidity_swap.dart';
 
 class Liquidity extends StatefulWidget {
   const Liquidity({Key? key}) : super(key: key);
@@ -121,8 +122,9 @@ class _LiquidityState extends State<Liquidity> {
                       GestureDetector(
                         onTap: () {
                           log('liquidity clicked');
+                          _liquidity = !_liquidity;
                           setState(() {
-                            _liquidity = !_liquidity;
+                            // _liquidity = !_liquidity;
                           });
                         },
                         child: const Text(
@@ -140,6 +142,7 @@ class _LiquidityState extends State<Liquidity> {
               ],
             ),
           )
-        : const Text('data');
+        : const SwapLiquidity();
+    // const Text('data');
   }
 }
