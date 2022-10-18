@@ -10,6 +10,9 @@ import '../components/drawer/customdrawer.dart';
 import '../dialogbox/dialog_helper.dart';
 
 class HomeScreen extends StatefulWidget {
+  // final Company data;
+  // // HomeScreen(this.data);
+  // const HomeScreen({required this.data});
   const HomeScreen({Key? key}) : super(key: key);
 
   @override
@@ -20,6 +23,11 @@ class _HomeScreenState extends State<HomeScreen> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
   bool _flag = true;
+
+  // final Company data;
+
+  // _HomeScreenState(this.data);
+  // late final Company? data;
 
   @override
   Widget build(BuildContext context) {
@@ -196,7 +204,12 @@ class _HomeScreenState extends State<HomeScreen> {
 
             //2
             SizedBox(
-              child: _flag ? const Swap() : const Liquidity(),
+              child: _flag
+                  ? const Swap()
+                  // Swap(
+                  //     data: widget.data,
+                  //   )
+                  : const Liquidity(),
             )
           ],
         ),

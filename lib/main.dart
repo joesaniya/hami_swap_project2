@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 
+import 'model/company.dart';
 import 'screens/home.dart';
 
 void main() {
@@ -9,7 +10,9 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  MyApp({Key key}) : super(key: key);
+  // final Company data;
+
+  // MyApp({Key key, this.data}) : super(key: key);
 
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -68,6 +71,9 @@ class MyApp extends StatelessWidget {
       //   );
       // },
       home: const HomeScreen(),
+      // home: HomeScreen(
+      //   data: data,
+      // ),
     );
   }
 }

@@ -7,6 +7,8 @@ import 'package:swap_hami/theme/appcolors.dart';
 
 class Swap extends StatefulWidget {
   const Swap({Key? key}) : super(key: key);
+  // final Company data;
+  // Swap({required this.data});
 
   @override
   State<Swap> createState() => _SwapState();
@@ -18,8 +20,8 @@ class _SwapState extends State<Swap> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: double.infinity,
-      height: MediaQuery.of(context).size.height * 0.51,
+      // width: double.infinity,
+      // height: MediaQuery.of(context).size.height * 0.51,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(30), color: Appcolor.cardbg),
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
@@ -87,9 +89,9 @@ class _SwapState extends State<Swap> {
 
           //frm
           Container(
-            width: double.infinity,
-            // height: 110,
-            height: MediaQuery.of(context).size.height * 0.1,
+            // width: double.infinity,
+            // // height: 110,
+            // height: MediaQuery.of(context).size.height * 0.1,
             padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
             decoration: BoxDecoration(
                 color: Appcolor.frmbg, borderRadius: BorderRadius.circular(30)),
@@ -232,9 +234,9 @@ class _SwapState extends State<Swap> {
 
           //to
           Container(
-            width: double.infinity,
-            // height: 110,
-            height: MediaQuery.of(context).size.height * 0.1,
+            // width: double.infinity,
+            // // height: 110,
+            // height: MediaQuery.of(context).size.height * 0.1,
             padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
             decoration: BoxDecoration(
                 color: Appcolor.frmbg, borderRadius: BorderRadius.circular(30)),

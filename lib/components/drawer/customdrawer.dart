@@ -2,7 +2,6 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:swap_hami/data/drawer_items.dart';
-import 'package:swap_hami/screens/home.dart';
 import 'package:swap_hami/screens/trade.dart';
 
 import '../../model/drawer_item.dart';
@@ -249,10 +248,10 @@ selectItem(BuildContext context, int index) {
   switch (index) {
     case 0:
       // navigateTo(const HomeScreen());
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => const HomeScreen()),
-      );
+      // Navigator.push(
+      //   context,
+      //   MaterialPageRoute(builder: (context) => const HomeScreen()),
+      // );
       log('0');
       break;
     case 1:

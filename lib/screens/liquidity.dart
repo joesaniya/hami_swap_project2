@@ -19,8 +19,8 @@ class _LiquidityState extends State<Liquidity> {
   Widget build(BuildContext context) {
     return _liquidity
         ? Container(
-            width: double.infinity,
-            height: MediaQuery.of(context).size.height * 0.51,
+            // width: double.infinity,
+            // height: MediaQuery.of(context).size.height * 0.51,
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(30),
                 color: Appcolor.cardbg),

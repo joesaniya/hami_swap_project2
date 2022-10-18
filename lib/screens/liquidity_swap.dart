@@ -19,8 +19,8 @@ class _SwapLiquidityState extends State<SwapLiquidity> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: double.infinity,
-      height: MediaQuery.of(context).size.height * 0.51,
+      // width: double.infinity,
+      // height: MediaQuery.of(context).size.height * 0.51,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(30), color: Appcolor.cardbg),
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
@@ -101,9 +101,9 @@ class _SwapLiquidityState extends State<SwapLiquidity> {
 
           //frm
           Container(
-            width: double.infinity,
-            // height: 110,
-            height: MediaQuery.of(context).size.height * 0.1,
+            // width: double.infinity,
+            // // height: 110,
+            // height: MediaQuery.of(context).size.height * 0.1,
             padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
             decoration: BoxDecoration(
                 color: Appcolor.frmbg, borderRadius: BorderRadius.circular(30)),
@@ -245,9 +245,9 @@ class _SwapLiquidityState extends State<SwapLiquidity> {
 
           //to
           Container(
-            width: double.infinity,
-            // height: 110,
-            height: MediaQuery.of(context).size.height * 0.1,
+            // width: double.infinity,
+            // // height: 110,
+            // height: MediaQuery.of(context).size.height * 0.1,
             padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
             decoration: BoxDecoration(
                 color: Appcolor.frmbg, borderRadius: BorderRadius.circular(30)),

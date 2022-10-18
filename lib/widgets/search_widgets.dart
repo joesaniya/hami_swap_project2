@@ -1,4 +1,7 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
+import 'package:swap_hami/screens/swap.dart';
 import 'package:swap_hami/theme/appcolors.dart';
 
 import '../model/company.dart';
@@ -16,7 +19,24 @@ class CompanyTile extends StatelessWidget {
     //   color: Colors.red,
     // );
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        log('data clicked');
+        log(data.title);
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const Swap()),
+        );
+        Navigator.pop(context);
+
+        // Navigator.push(
+        //   context,
+        //   MaterialPageRoute(
+        //     builder: (context) => Swap(
+        //       data: data,
+        //     ),
+        //   ),
+        // );
+      },
       child: Container(
         height: 40,
         width: double.infinity,
