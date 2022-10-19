@@ -26,6 +26,7 @@ class CompanyTile extends StatelessWidget {
           context,
           MaterialPageRoute(builder: (context) => const Swap()),
         );
+        // .then((value) => null);
         Navigator.pop(context);
 
         // Navigator.push(
