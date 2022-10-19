@@ -207,7 +207,8 @@ class _HomeScreenState extends State<HomeScreen> {
               child: _flag
                   ? const Swap()
                   // Swap(
-                  //     data: widget.data,
+                  //
+                  //data: widget.data,
                   //   )
                   : const Liquidity(),
             )

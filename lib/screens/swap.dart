@@ -195,9 +195,16 @@ class _SwapState extends State<Swap> {
                             child: Container(
                               child: Row(
                                 children: const [
-                                  Icon(Icons.abc),
+                                  // Icon(Icons.abc),
+                                  CircleAvatar(
+                                    backgroundImage:
+                                        AssetImage('assets/images/bnb.png'),
+                                  ),
+                                  SizedBox(
+                                    width: 10,
+                                  ),
                                   Text(
-                                    'data',
+                                    'BNB',
                                     style: TextStyle(
                                         fontSize: 16,
                                         fontWeight: FontWeight.w600,
