@@ -19,7 +19,10 @@ class CustomDrawerHeader extends StatelessWidget {
         children: [
           // const FlutterLogo(size: 30),
           const Image(
-            image: AssetImage('assets/images/logoh.png'),
+            image: AssetImage(
+              'assets/images/hami.png',
+              // 'assets/images/logoh.png'
+            ),
             height: 30,
           ),
           if (isColapsed) const SizedBox(width: 10),
